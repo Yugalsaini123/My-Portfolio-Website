@@ -220,7 +220,7 @@ const itemVariants = {
 };
 
 const MySkills = ({ setThemeDark, theme }) => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  // const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
     <Box 
@@ -272,8 +272,8 @@ const MySkills = ({ setThemeDark, theme }) => {
         <Main 
           key={index}
           variants={itemVariants}
-          onHoverStart={() => setHoveredCard(index)}
-          onHoverEnd={() => setHoveredCard(null)}
+          // onHoverStart={() => setHoveredCard(index)}
+          // onHoverEnd={() => setHoveredCard(null)}
           whileHover={{ 
             scale: 1.05,
             transition: { duration: 0.3 }

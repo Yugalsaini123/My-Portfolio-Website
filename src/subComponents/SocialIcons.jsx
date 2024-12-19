@@ -103,7 +103,7 @@ const Line = styled(motion.span)`
 
 
 const SocialIcons = ({ click }) => {
-  const [phone, setPhone] = useState(false);
+  const [phone] = useState(false);
 
   return (
     <Icons click={click} phone={phone}>
