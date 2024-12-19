@@ -1,5 +1,5 @@
 // src/components/MySkills.jsx
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { ReactComponent as Frontend } from "../assets/svg/coding-svgrepo-com.svg";
