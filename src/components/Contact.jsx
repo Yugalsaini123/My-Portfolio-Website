@@ -1,11 +1,9 @@
 // src/components/Contact.jsx
-import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
-
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import BigTitle from "../subComponents/BigTitle";
 import LogoComponent from "../subComponents/LogoComponent";
-// import ParticleComponent from "../subComponents/ParticleComponent";
 import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
 
@@ -18,9 +16,8 @@ const Box = styled(motion.div)`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  @media (max-width: 768px) {
-  }
 `;
+
 const Main = styled(motion.div)`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
@@ -30,7 +27,6 @@ const Main = styled(motion.div)`
   padding: 3rem;
   line-height: 1.5;
   font-family: "Ubuntu Mono", monospace;
-
   z-index: 3;
   backdrop-filter: blur(5px);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
@@ -53,6 +49,7 @@ const Form = styled.form`
     margin-bottom: 30px;
   }
 `;
+
 const Title = styled.h2`
   position: relative;
   font-size: 24px;
@@ -69,6 +66,7 @@ const Title = styled.h2`
     background: ${(props) => props.theme.text};
   }
 `;
+
 const InputBox = styled.div`
   position: relative;
   margin-top: 20px;
@@ -144,9 +142,8 @@ const Contact = ({ setThemeDark, theme }) => {
         body: encode({ "form-name": "contact-form", ...formData }),
       })
         .then((res) => {
-          console.log(res);
-          if (res.status.toString() === "200") setSubmitStatus("Successful");
-          if (res.status.toString() !== "200") setSubmitStatus("Failed");
+          if (res.ok) setSubmitStatus("Successful");
+          else setSubmitStatus("Failed");
         })
         .then(() => setIsSubmitted(false))
         .then(() => setFormData({ name: "", email: "", msg: "" }))
@@ -158,14 +155,15 @@ const Contact = ({ setThemeDark, theme }) => {
     <Box>
       <LogoComponent theme={theme} setThemeDark={setThemeDark} />
       <PowerButton />
-      {/* <ParticleComponent theme={theme} page={"about"} /> */}
       <Main>
-        {/* <Square del={0}></Square>
-        <Square del={1}></Square>
-        <Square del={2}></Square>
-        <Square del={3}></Square>
-        <Square del={4}></Square> */}
-        <Form onSubmit={handleSubmit}>
+        <Form
+          onSubmit={handleSubmit}
+          name="contact-form"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="contact-form" />
           {submitStatus === "Not Submitted" && (
             <>
               <Title>Drop Me a Message</Title>
@@ -181,7 +179,7 @@ const Contact = ({ setThemeDark, theme }) => {
               </InputBox>
               <InputBox>
                 <input
-                  type="text"
+                  type="email"
                   placeholder={errors.email ? errors.email : "E-mail"}
                   name="email"
                   value={formData.email}
@@ -190,7 +188,6 @@ const Contact = ({ setThemeDark, theme }) => {
               </InputBox>
               <InputBox>
                 <textarea
-                  type="text"
                   placeholder={errors.msg ? errors.msg : "Message"}
                   name="msg"
                   value={formData.msg}
@@ -205,7 +202,7 @@ const Contact = ({ setThemeDark, theme }) => {
           {submitStatus === "Successful" && (
             <>
               <p style={{ textAlign: "center" }}>
-                Your Message has been recieved.
+                Your Message has been received.
               </p>
               <p
                 style={{
@@ -239,7 +236,6 @@ const Contact = ({ setThemeDark, theme }) => {
           )}
         </Form>
       </Main>
-
       <SocialIcons />
       <BigTitle top="1%" left="20%" text="CONTACT" />
     </Box>
