@@ -23,14 +23,6 @@ const rotatePulse = keyframes`
   100% { transform: rotate(360deg) scale(1); }
 `;
 
-// --- Rectangular Path Keyframes (Around Center) ---
-const rectangularPath = keyframes`
-  0%   { transform: translate(-50%, -50%) translate(0, -0px); } /* Top Center */
- 
-  50%  { transform: translate(-50%, -50%) translate(0, 100px); }  /* Bottom Center */
- 
-  100% { transform: translate(-50%, -50%) translate(0, -0px); } /* Back to Top */
-`;
 
 // --- Styled Components ---
 const MainContainer = styled.div`
@@ -90,7 +82,7 @@ const Center = styled.div`
 // Option Styling
 const MenuOption = styled(motion(Link))`
   text-decoration: none;
-  animation: ${rectangularPath} 10s linear infinite;
+  
   color: ${(props) => props.theme.text};
   font-size: 24px;
   font-weight: 600;
@@ -119,11 +111,10 @@ const Options = {
     animation: ${floatEffect}  5s ease-in-out infinite;
 
     @media (max-width: 768px) {
+    bottom: 16%;
     font-size: 18px;
     padding-left:20px;
     animation: ${floatEffect} 5s ease-in-out infinite;
-    bottom: 1rem;
-    right: 2rem;
     }
   `,
   About: styled(MenuOption)`
@@ -132,10 +123,12 @@ const Options = {
     animation: ${floatEffect}  5s ease-in-out infinite;
 
     @media (max-width: 768px) {
-    bottom: 16%;
+    
     font-size: 18px;
     padding-left:20px;
     animation: ${floatEffect} 5s ease-in-out infinite;
+    bottom: 1rem;
+    right: 2rem;
     }
   `,
   Skills: styled(MenuOption)`
@@ -160,13 +153,13 @@ const Options = {
     font-size: 18px;
     animation: ${floatEffect} 5s ease-in-out infinite;
     bottom: 1rem;
-    width: 100%;
+    
     left: 2rem;
     }
   `,
   Contact: styled(MenuOption)`
     bottom: 20%;
-    left: 50%;
+    left: 45%;
     transform: translateX(50%);
     animation: ${floatEffect}  5s ease-in-out infinite;
 
@@ -175,8 +168,8 @@ const Options = {
     padding-right:30px;
     animation: ${floatEffect} 5s ease-in-out infinite;
     bottom: 1rem;
-    width: 100%;
-    left: 8.4rem;
+    
+    left: 9.5rem;
     }
   `,
 };
