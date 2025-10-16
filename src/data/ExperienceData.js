@@ -2,6 +2,16 @@
 export const ExperienceData = {
     internships: [
       {
+        company: "JadeCaps Technologies Private Limited‎",
+        position: "Software Development Intern",
+        location: "Bengaluru, Karnataka",
+        duration: "Jun 2025 – Oct 2025",
+        responsibilities: [
+          "Developed tenant-onboarding modules with dynamic database provisioning and isolation logic using Node.js, Express, and Sequelize ORM.",
+          "Integrated third-party services, including channel managers (RentalUnited), via RESTful and SOAP APIs."
+        ]
+      },
+      {
         company: "Dooper Health Technology Pvt Ltd",
         position: "Summer Internship",
         location: "Kota, Rajasthan",
@@ -9,16 +19,6 @@ export const ExperienceData = {
         responsibilities: [
           "Collaborating on the development and deployment of full-stack web applications using the MERN stack and AWS Cloud, focusing on scalable and responsive design.",
           "Implementing various user-centric features including authentication systems, data management, and real-time notifications."
-        ]
-      },
-      {
-        company: "Bluestock Fintech‎ ‎‎‎ ‎‎‎‎‎ ‎ ‎‎‎ ‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎ ‎‎ ‎‎ ‎‎ ‎‎ ‎",
-        position: "Frontend Intern",
-        location: "Pune, Maharashtra",
-        duration: "Jul 2024 – Aug 2024",
-        responsibilities: [
-          "Completed an internship focused on frontend development, utilizing HTML, CSS, and JavaScript.",
-          "Contributed to enhancing the user experience and site performance through responsive design."
         ]
       }
     ],
@@ -44,4 +44,5 @@ export const ExperienceData = {
         ]
       }
     ]
+
   };
