@@ -7,7 +7,7 @@ import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
 import { motion } from "framer-motion";
 import ResumePdf from "../assets/resume/Yugal Saini Resume.pdf";
-import MyImage from "../assets/Images/Passport size pic.jpg";
+import MyImage from "../assets/Images/profile-pic.png";
 import GlowingAnimation from "../subComponents/ParticleComponent";
 import Intro from "./Intro";
 
